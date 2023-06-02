@@ -22,7 +22,7 @@
           <ul>
           <li class="connect" v-if="conStatus">
               <p>{{upperDate(conTime)}}</p>
-              <i style="color:green">连接成功</i>              
+              <i style="color:green">连接成功 </i>              
             </li>
             <li v-for="(item,index) in dataList" :key="index">
                 <p v-if="item.status==true" >{{upperDate(item.ctime)}}</p>
