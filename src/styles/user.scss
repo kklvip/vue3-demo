@@ -1,0 +1,96 @@
+.bankCard{
+  margin-left: -20px;
+  label{
+    padding: 10px!important;
+    display: block;
+    margin:  0 auto 15px!important;
+    height: auto!important;
+    width: 300px;
+    float: left;
+    border-color: transparent!important;
+    &.is-checked{
+      // border-color: #409EFF!important;
+    }
+    span.el-radio__input{
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      margin-top: -7px;
+    }
+    span.el-radio__label{
+      padding-left: 25px;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  .bankName{
+    // border: 1px solid #ddd;
+    padding: 15px 10px 0;
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color:#fff;
+    // width: calc(100% - 20px);
+    width: 100%;
+    overflow: hidden;
+    i{
+      font-style: normal;
+    }
+    small{
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.cashBox .el-form-item.is-required .el-form-item__label:before{
+  display: none;
+}
+.allBanks{
+  width: 80%;
+  margin: 0 auto;
+  .el-card__body{
+    padding: 0px;
+    position: relative;
+  }
+  .el-card{
+    border: none;
+    height: 110px;
+  }
+  .bankItem{
+    // padding:10px;
+    margin-bottom: 30px;
+    overflow: visible;
+    .bankName{
+      height: 110px;
+      border-radius: 6px;
+    }
+    .bankDelete{
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &:hover .bankDelete{
+      opacity: 1;
+      visibility: visible;
+      transition: .2s;
+    }
+  }
+  .addBank{
+    text-align: center;
+    background: #32bbe8;
+    cursor: pointer;
+    span{
+      font-size:30px;
+      font-weight: bold;
+    }
+    p{
+      margin-top: 20px;
+      color:#fff;
+    }
+  }
+}

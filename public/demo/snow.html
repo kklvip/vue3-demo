@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" context="IE=edge">
+    <meta name="viewport" context="width=device-width, initial-scale=1.0">
+    <title>献给亲爱的艳艳宝贝</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url(./snow_bg.webp);
+            background-size: cover;
+        }
+        #audios{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <audio id="audios" src="./带着钢琴去旅行 - 初雪-钢琴曲.mp3" autoplay="autoplay" loop="loop"  preload="auto" controls ></audio>
+    <script src="./jquery-2.1.0.js"></script>
+    <script>
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+    
+        let num = 200;
+        let snows = [];
+        for(let i=0;i<num;i++){
+            snows.push({
+                x:Math.random()*w,
+                y:Math.random()*h,
+                r:Math.random()*10+1,
+            })
+        }
+        let move = ()=>{
+            for(let i=0;i<num;i++){
+                let snow = snows[i]
+                snow.x+=Math.random()*2+1;
+                snow.y+=Math.random()*2+1;
+                if(snow.x>w){
+                    snow.x=0
+                }
+                if(snow.y>h){
+                    snow.y=0
+                }
+            }
+        }
+        let draw = ()=>{
+            context.clearRect(0,0,w,h);
+            context.beginPath();
+            context.fillStyle = 'rgb(255,255,255)';
+            context.shadowColor = 'rgb(255,255,255)';
+            context.shadowBlur = 10;
+    
+            for(let i=0;i<num;i++){
+                let snow = snows[i];
+                context.moveTo(snow.x,snow.y)
+                context.arc(snow.x,snow.y,snow.r,0,Math.PI*2)
+            }
+            context.fill();
+            context.closePath();
+            move();
+        }
+        draw();
+        setInterval(draw,30)
+
+        // var music=$('.music');
+        // var audio=document.querySelector('audio');
+        // music.on('click',function(e){
+        // e.stopPropagation();
+        // var _this=$(this);
+        // if(_this.hasClass('on')){
+        // _this.addClass('off').removeClass('on');
+        // audio.pause();
+        // }
+        // else{
+        // _this.removeClass('off').addClass('on');
+        // audio.play();
+        // }
+        // });　　
+
+        document.addEventListener('touchstart', function() {
+            document.getElementById('audios').play()
+        })
+    </script>
+</body>
+
+</html>
