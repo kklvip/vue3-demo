@@ -62,7 +62,7 @@
         let falseStatus = ref(false)
         let conTime = ref("");
         let losTime = ref("");
-        let dataList = ref([])
+        let dataList = ref([]);
         let closemodal = ref(false)
         let modal=ref(true)
         let msgFrom = ref("")
