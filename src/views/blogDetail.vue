@@ -60,8 +60,8 @@
         let conStatus = ref(true)
         let losConStatus = ref(false)
         let falseStatus = ref(false)
-        let conTime = ref("")
-        let losTime = ref("")
+        let conTime = ref("");
+        let losTime = ref("");
         let dataList = ref([])
         let closemodal = ref(false)
         let modal=ref(true)
